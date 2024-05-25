@@ -1,0 +1,83 @@
+                                            /*Efecto roto*/
+body {                                       /*body*/
+    background: #222;                       /*color de fondo*/
+    min-height: 100vh;                          /*alto */
+    display: grid;                              /*tipo de display*/
+    place-items: center;                        /*centro los items*/
+    color: white;                             /*color de texto*/
+    font-family: sans-serif;                    /*tipografia*/
+  } 
+.glitch {                                   /*clase glitch*/
+    font-size: 8rem;                            /*tamaño de la fuente*/
+    font-weight: 700;
+    margin: 30px;                       /*espesor de la fuente*/
+    position: relative;                     /*posicion */
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),          /*sombra texto posicion y color*/      
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  
+    animation: glitch 2500ms infinite;                      /*tiempo de animacion*/
+}
+.glitch span {                                      /*clase spam*/
+    position: absolute;                                /*defino posicion*/
+    top: 0;                                            /*arriba */
+    left: 0;                                            /*izq*/
+}
+.glitch span:first-child {                              /*primer hijo*/
+    animation: glitch 650ms infinite;                   /*tiempo de animacion*/
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);  /*recorto y desplazo */ 
+    transform: translate(-0.025em, -0.0125em);          /*cuanto de desplaza*/
+    opacity: 0.8;                                       /*opacidad*/
+}
+.glitch span:last-child {                               /*segundo hijo*/
+    animation: glitch 375ms infinite;                   /*tiempo de animacion*/
+    clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);         /*recorto y desplazo*/
+    transform: translate(0.0125em, 0.025em);                    /*distancias de desplazamiento*/
+    opacity: 0.8;                                               /*opacidad*/
+}
+@keyframes glitch {                                         /*posiciones de animacion, sombras*/
+    0% {                                                        /*inicio*/
+        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+        -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    
+    15% {                                                           /*posicion 2*/
+        text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+        0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    
+    50% {                                                           /*posicion 3*/
+        text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),            
+        0.05em 0 0 rgba(0, 255, 0, 0.75), 
+        0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    
+    100% {                                                           /*posicion 4*/
+        text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+        -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+}
+@media (max-width: 1500px){
+    .glitch{
+        font-size: 6rem;                            /*tamaño de la fuente*/
+        font-weight: 500;
+        margin: 30px;
+    }
+}
+@media (max-width: 1000px){
+    .glitch{
+        font-size: 4rem;                            /*tamaño de la fuente*/
+        font-weight: 300;
+        margin: 30px;       
+    }
+}
+@media (max-width: 800px){
+    .glitch{
+        font-size: 3rem;                            /*tamaño de la fuente*/
+        font-weight: 400;
+        margin: 30px;
+    }
+}

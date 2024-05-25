@@ -1,0 +1,451 @@
+*{                      /*Normalizo*/
+    padding: 0px;     
+    margin: 0px;
+    text-decoration: none;   /*quito decoracion*/
+    list-style: none;
+    box-sizing: border-box;    
+}
+.warnings{
+    height: 150px;
+    background: red;
+    color: white;
+    display: none;
+}
+/*MAQUETADO GRAL*/
+body{
+    display: grid;              /*ASIGNO GRID*/
+    grid-template-columns: 1fr 1fr 1fr; /*tantas columnas*/    
+    grid-template-rows: auto auto auto;      /*tantas filas*/
+    grid-template-areas: "header header header"     /*uso grid areas para definir cada posicion*/
+                         "main main main"
+                         "footer footer footer";
+}
+header{                     /* Div del Menu*/
+    grid-area: "header";        /*asigno el nombre */
+    grid-column: 1/4;       /*desde hasta donde abarca ancho*/
+    grid-row: 1/2;          /*desde hasta donde abarca alto*/
+    background-color: aqua; /*color de fondo*/
+    border-radius: 6px;       /*redondeo los angulos*/ 
+    height: 130PX;            /*doy un alto de 130px*/
+    width: 100%;               /*cubre 100% de la vw*/
+    position: fixed;           /*lo pego arriba*/
+}
+main{                           /*cuerpo*/
+    grid-area: "main";          /*asigno nombre*/
+    grid-column: 1/4;           /*cuantas columnas cubre*/
+    grid-row: 2/3;              /*desde hasta que fila va*/
+    width: 100%;                /*asigno ancho del vw*/
+    display: grid;              /*asigno display grid*/
+    grid-template-columns: 1fr 1fr;         /*asigno cantidad de columnas*/
+    grid-template-rows: auto auto auto auto auto;    /*cantidad de filas*/
+    gap: 20px;                                  /*separacion entre ellas*/
+    grid-template-areas: "titulo      titulo"       /*defino posicion de areas*/
+                         "formulario formulario"
+                         "diario     genero"
+                         "boton      boton"
+                         "opinion    opinion";
+}
+footer{                                 /*Pie de pagina*/
+    grid-area: "footer";                  /*defino nombre*/
+    grid-column: 1/4;                   /*cantidad de columnas que cubre*/
+    grid-row: 3/4;                      /*cantidad de filas que cubre*/
+    display: grid;                        /*asigno grid*/
+    margin-bottom: 50px;                    /*margen inferior*/
+    width: 100%;                            /*ancho del vw*/
+    height: 450px;                          /*alto del pie*/
+    grid-template-columns: 1fr 1fr;         /*cantidad de columnas*/
+    grid-template-rows: 1fr 1fr;             /*cantidad de filas*/
+    gap: 15px;                              /*margen entre ellas*/
+    grid-template-areas: "mapa  telefonos"  /*defino posicion de areas*/
+                         "mapa  redes";
+}                        
+/*MAQUETADO INTERNO*/
+.titulo{
+    grid-area: "titulo";        /*nombre del area*/
+    grid-column: 1/3;           /*cant de columnas que cubre*/
+    grid-row: 1/2;              /*fila en la que se posiciona*/
+    margin-top: 140px;          /*supuesta distancia de margen sup*/
+    height: 60px;               /*alto del contenedor*/
+    text-align: center;         /*alineo al centro */
+    text-decoration: underline;     /*subrayo*/
+    font-size: 50px;                /*tamaño de la fuente*/
+    font-family: "DM Serif Display", serif;     /*letras sacadas a google font*/
+    font-style: italic;                         /*estilo de letras*/
+}
+.formulario{                        
+    grid-area: "formulario";        /*defino el area*/
+    grid-column: 1/3;               /*cantidad de col que ocupa*/
+    grid-row: 2/3;                  /*cant de filas que ocupa*/
+    margin: 20px;                   /*margen */
+    font-size: 20px;                /*tamaño de la fuente*/
+    align-content: center;          /*centro eñ contenedor*/
+    text-align: center;         /*alineo el txt*/
+    border-radius: 6px;             /*redondeo ang*/
+    box-shadow: 10px 15px 20px 10px;        /*doy sombra */
+    transition: all 0.3s;               /*aplico trans y le doy tiempo*/
+}
+.diario{                            
+    grid-area: "diario";            /*defino nombre de area*/
+    grid-column: 1/2;               /*en que colum  se ubica*/
+    grid-row: 3/4;                  /*que fila ocupa*/
+    margin: 20px;                   /*margen respecto del resto*/
+    font-size: 20px;                /*tamño de la fuente*/
+    height: 150px;                  /*altura del contenedor*/
+    align-content: center;          /*alineo al centro*/
+    text-align: center;             /*alineo txt*/
+    border-radius: 6px;              /*quito angulos en las puntas*/
+    box-shadow: 10px 15px 20px 10px;        /*sombreo*/
+    transition: all 0.3s;               /*tiempo de cambio*/
+}
+.genero{
+    grid-area: "genero";        /*nombre de area*/
+    grid-column: 2/3;               /*ubicacion eje x*/
+    grid-row: 3/4;              /*ubicacion eje y*/
+    border-radius: 6px;         
+    margin: 20px;
+    height: 150px;                   
+    font-size: 20px;                
+    align-content: center;                      
+    text-align: center;
+    box-shadow: 10px 15px 20px 10px;
+    transition: all 0.3s;
+}
+.boton{
+    grid-area: "boton";             
+    grid-column: 1/3;
+    grid-row: 4/5;
+    height: 50px;
+    width: 80px;
+    border-radius: 6px;
+    font-size: medium;
+    justify-self: center;
+    align-content: center;
+    text-align: center;
+    box-shadow: 5px 10px 15px 5px;
+    transition: all 0.3s;
+}
+.boton:hover{                       /*le asigno seudo clase*/
+    background-color: blue;       /*color de fondo*/
+    color:white;                 /*cambio color de texto*/
+}
+.opinion{
+    grid-area: "opinion";
+    grid-column: 1/3;
+    grid-row: 5/6;
+    width: 40%;
+    margin: 20px;
+    border-radius: 6px;
+    padding: 20px;
+    justify-self: center;
+    align-content: center;
+    text-align: center;
+    box-shadow: 10px 15px 20px 10px;
+    transition: all 0.3s;
+}
+.mapa{
+    grid-area: "mapa";
+    grid-column: 1/2;
+    grid-row: 1/3;
+    margin: 20px;
+    text-align: center;
+    align-content: center;
+    box-shadow: 10px 15px 20px 10px;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+.telefonos{
+    grid-area: "telefonos";
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin: 20px;
+    font-size: 20px;
+    text-align: center;
+    align-content: center;
+    box-shadow: 10px 15px 20px 10px;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+.redes{
+    grid-area: "redes";
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin: 20px;
+    font-size: 20px;
+    text-align: center;
+    align-content: center;
+    border-radius: 6px;
+    box-shadow: 10px 15px 20px 10px;
+    transition: all 0.3s;
+}
+/*HEADER MENU BAR*/
+nav{                     /*barra navegadora*/
+    background: cornflowerblue;    /*color de fondo*/
+    height: 120px;     /*alto barra menubar*/
+    width: 100%;       /*ancho barra*/
+}
+.enlace{                 /*contenedor del logo*/
+    position: absolute;  /*lo posiciono*/
+}
+.logo{
+    width: 130px;        /*tamaño del logo*/
+    line-height: 120px; /*lo centro con line height*/
+}
+nav ul{           /*lista menu*/
+    float: right;    /*la mandamos a la derecha*/
+    margin-right: 50px;   /*a tantos px de distancia del mr*/
+}
+nav ul li{         /*lista de menu*/
+    display: inline-block;  /* los ponemos en inline-block*/
+    line-height: 120px;    /* que cubra el ancho del nav*/
+    margin: 0px 5px;      /*los separo entre ellos */
+}
+nav ul li a{         /*los a dentro de la li ul nav*/
+    color:white;    /*aplicamos color*/
+    font-size: 18px;    /*tamaño de la fuente*/
+    padding: 7px 13px;     /* sigo distanciando todo de todo*/
+    border-radius: 5px;   /*redondeo los bordes de las cajas*/
+    text-transform: uppercase;   /*transformo a mayusculas*/
+}
+li a.active, li a:hover{            /*clase active para q se muestre y seudo clase del menu*/
+    background: blue;   /*color de fondo*/
+    transition: .5s;    /*tiempo de transf*/
+}
+.checkbtn{              /* menu bar*/
+    padding-top: 3px;     /* distancia de arriba*/
+    font-size: 30px;     /*tamaño de las bars*/
+    color: white;       /*color*/
+    float: right;          /*lo mando a la derecha*/
+    line-height: 120px;    /* lo centro */
+    margin-right: 40px;    /*distancia margen derecho*/
+    cursor: pointer;       /*quito la flecha pongo la manito*/
+    display: none;      /*oculto el menu*/
+}
+#check{
+    display: none;      /*oculto el casillero check */
+}
+fieldset{
+    height: 9rem;       /*tamaño del fieldset*/
+    margin: 7px;        /*margen respecto del contenedor*/
+}
+legend{
+    text-align: left;           /*alineacion del texto respecto del contenedor*/
+    font-size: medium;              /*tamaño de la fuente*/
+    margin-left: 10px;              /*margen respecto del contenedor*/
+}
+.cont{
+    margin: 10px;    /*separo entre ellos 5px*/                
+    background: rgb(205, 205, 205);    /*color interno*/
+    transition: all .5s;        /*propiedad y tiempo de transicion*/
+}
+.cont:focus{            /*seudo clase*/
+    background: white;      /*color de fondo*/
+    padding: 5px;   /*distancio la escritura de los bordes del cont*/
+}
+h3{
+    text-decoration: underline;     /*subrayado*/
+    padding: 10px;                  /*distancio*/
+}
+footer div ul li{                   
+    display: inline-block;              /*cambio a inline con prop de block*/
+    margin: 0px 10px;                   /*distancia entre los items*/
+}
+.formulario:hover, .diario:hover, .genero:hover, .opinion:hover{
+    box-shadow: 10px 15px 20px 10px cornflowerblue;             /*cambio de color*/
+}
+.mapa:hover, .telefonos:hover, .redes:hover{
+    box-shadow: 10px 15px 20px 10px cornflowerblue;             /*cambio de color*/
+}
+/*MEDIA QUERY*/
+@media (max-width: 1500px){  /*aplico view port para monitor mas chico*/
+    .enlace{                     /*link bajo en logo por si quiero usarlo para algo*/
+        font-size: 16px;        /* le doy un tamañp*/
+        padding-left: 22px;      /*le distancio del lado izq*/
+    }    
+}
+@media (max-width: 1152px){    /*view port para tablet*/
+    .enlace{
+        padding-left: 20px;     /*muevo la caja del logo de 40 a 20 px izq*/
+    }
+    nav ul li a{               
+        font-size: 14px;        /*achico el tamaño de la fuente de la barra de menu.*/
+    }
+}
+@media (max-width: 850px){     /*view port telefono*/
+    .checkbtn{                      
+        display: block;       /*le pido que se comporte como bloque*/ 
+    }
+    nav ul{
+        position: fixed;     /*fijo el menu*/
+        width: 100%;               /*ancho del tel*/
+        height: 100%;             /* alto del tel*/
+        background: rgb(71, 69, 69);      /*color del menu desplegable*/
+        top: 130px;                /* altura del menu*/
+        left: -100%;                /*lo oculto para que no se vea*/
+        text-align: center;           /* centro los items de menu*/
+        transition: all .5s;          /*le doy una transicion de medio seg*/
+    }
+    nav ul li{
+        display: block;      /*lista menu lo paso a bloque*/
+        margin: 50px 0;      /*margen de 50px*/
+        line-height: 30px;   /*separo los items con 30px*/
+    }
+    nav ul li a{
+        font-size: 20px;     /*tamaño de la letra*/
+    }
+    nav ul li a:hover{              /*seudo clase*/
+        background: none;   /*le saco el bkg*/
+        color:red;        /*pinto las letras de rojo cuando las cliqueo*/
+    }
+    #check:checked ~ul{    /*traigo el menu cuando el casillero check esta tildado*/
+        left: 0;          /*posiciono el menu*/
+    }
+    main{
+        grid-area: "main";          /*defino areas*/
+        display: grid;                  /*defino tipo de display*/
+        width: 100%;                        /*ancho de vw*/
+        border-radius: 6px;             /*redondeo bordes*/
+        grid-template-columns: 1fr;         /*cantidad de columnas*/
+        grid-template-rows: auto auto auto auto auto auto;      /*cantidad de filas*/
+        gap: 20px;                          /*distancia entre ellas*/
+        grid-template-areas: "titulo"           /*cantidad de areas y posicion*/
+                             "formulario"
+                             "diario"     
+                             "genero"
+                             "boton"
+                             "opinion";
+    }
+    .titulo{                        
+        grid-area: "titulo";
+        grid-column: 1/2;
+        grid-row: 1/2;
+        height: 40px;
+        text-align: center;
+        text-decoration: underline;
+        margin-top: 140px;
+        font-size: 30px;
+    }
+    fieldset{
+        height: 100%;
+        margin: 7px;
+    }
+    .formulario{
+        grid-area: "formulario";
+        grid-column: 1/2;
+        grid-row: 2/3;
+        margin: 20px;
+        align-content: center;
+        text-align: center;
+        overflow: auto;
+        font-size: 18px;
+        border-radius: 6px;
+        box-shadow: 10px 15px 20px 10px;
+    }
+    .formulario {
+        justify-content: center;    /*centro forms*/
+        text-align: center;     /*alineo txt*/
+        align-items: center; /* Alineo el texto */
+        padding: 10px; /* separo los input y label */
+        margin-bottom: 3px; /*margen hacia abajo*/
+    }
+    .formulario label{
+         margin-bottom: 5px; /* mas separacion */
+    }
+    .formulario input {
+        width: 90%; /* le doy un ancho a los input */
+        margin-bottom: 10px; /* mas espacio entre los input */
+    }
+    .diario{
+        grid-area: "diario";
+        grid-column: 1/2;
+        grid-row: 3/4;
+        margin: 20px;
+        height: 150px;
+        font-size: 18px;
+        align-content: center;
+        text-align: center;
+        border-radius: 6px;
+        box-shadow: 10px 15px 20px 10px;
+    }
+    .genero{
+        grid-area: "genero";
+        grid-column: 1/2;
+        grid-row: 4/5;
+        border-radius: 6px;
+        height: 150px;
+        margin: 20px;
+        font-size: 18px;
+        align-content: center;
+        text-align: center;
+        box-shadow: 10px 15px 20px 10px;
+    }
+    .boton{
+        grid-area: "boton";
+        grid-column: 1/2;
+        grid-row: 5/6;
+        height: 40px;
+        justify-self: center;
+        align-content: center;
+        text-align: center;
+        box-shadow: 5px 10px 15px 5px;
+    }
+    .opinion{
+        grid-area: "opinion";
+        grid-column: 1/2;
+        grid-row: 6/7;
+        margin: 20px;
+        width: 93%;
+        border-radius: 6px;
+        align-content: center;
+        text-align: center;
+        box-shadow: 10px 15px 20px 10px;
+    }
+    footer{
+        grid-area: "footer";
+        display: grid;
+        border-radius: 6px;
+        margin-bottom: 50px;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 20px;
+        grid-template-areas: "mapa"
+                             "telefonos"
+                             "redes";
+    }
+    .mapa{
+        grid-area: "mapa";
+        grid-column: 1/2;
+        grid-row: 1/2;
+        gap: 20px;
+        margin: 20px;
+        height: 420px;
+        text-align: center;
+        align-content: center;
+        box-shadow: 10px 15px 20px 10px;
+        border-radius: 6px;
+    }
+    .telefonos{
+        grid-area: "telefonos";
+        grid-column: 1/2;
+        grid-row: 2/3;
+        margin: 20px;
+        height: 150px;
+        font-size: 18px;
+        text-align: center;
+        align-content: center;
+        box-shadow: 10px 15px 20px 10px;
+        border-radius: 6px;
+    }
+    .redes{
+        grid-area: "redes";
+        grid-column: 1/2;
+        grid-row: 3/4;
+        margin: 20px;
+        height: 150px;
+        font-size: 18px;
+        text-align: center;
+        align-content: center;
+        border-radius: 6px;
+        box-shadow: 10px 15px 20px 10px;
+    }
+}

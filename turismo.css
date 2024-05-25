@@ -1,0 +1,451 @@
+*{                      /*normalizo*/
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+/*Maquetado*/
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: "header header"
+                         "titulo titulo"
+                         "aside  article"
+                         "aside  article"
+                         "footer footer";
+}
+.header{
+    grid-area: "header";
+    grid-column: 1/3;
+    grid-row: 1/2;
+    height: 130px;
+    background: rgb(233, 198, 40);
+    width: 100%;
+    position: fixed;
+}
+.titulo{
+    grid-area: "titulo";
+    grid-column: 1/3;
+    grid-row: 2/3;
+    margin-top: 140px;
+}
+.aside{
+    grid-area: "aside";
+    grid-column: 1/2;
+    grid-row: 3/5;
+    height: 480px;
+    width: 45%;
+}
+.article{
+    grid-area: "article";
+    grid-column: 2/3;
+    grid-row: 3/5;
+    height: 480px;
+    width: 67%;
+}
+.footer{
+    grid-area: "footer";
+    grid-column: 1/3;
+    grid-row: 5/6;
+    height: 350px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+/*HEADER MENU BAR*/
+nav{                     /*barra navegadora*/
+    background: cornflowerblue;    /*color de fondo*/
+    height: 120px;     /*alto barra menubar*/
+    width: 100%;       /*ancho barra*/
+}
+.enlace{                 /*contenedor del logo*/
+    position: absolute;  /*lo posiciono*/
+}
+.logo{
+    width: 130px;        /*tamaño del logo*/
+    line-height: 120px; /*lo centro con line height*/
+}
+nav ul{           /*lista menu*/
+    float: right;    /*la mandamos a la derecha*/
+    margin-right: 50px;   /*a tantos px de distancia del mr*/
+}
+nav ul li{         /*lista de menu*/
+    display: inline-block;  /* los ponemos en inline-block*/
+    line-height: 120px;    /* que cubra el ancho del nav*/
+    margin: 0px 5px;      /*los separo entre ellos */
+}
+nav ul li a{         /*los a dentro de la li ul nav*/
+    color:white;    /*aplicamos color*/
+    font-size: 18px;    /*tamaño de la fuente*/
+    padding: 7px 13px;     /* sigo distanciando todo de todo*/
+    border-radius: 5px;   /*redondeo los bordes de las cajas*/
+    text-transform: uppercase;   /*transformo a mayusculas*/
+}
+li a.active, li a:hover{            /*clase active para q se muestre y seudo clase del menu*/
+    background: blue;   /*color de fondo*/
+    transition: .5s;    /*tiempo de transf*/
+}
+.checkbtn{              /* menu bar*/
+    padding-top: 3px;     /* distancia de arriba*/
+    font-size: 30px;     /*tamaño de las bars*/
+    color: white;       /*color*/
+    float: right;          /*lo mando a la derecha*/
+    line-height: 120px;    /* lo centro */
+    margin-right: 40px;    /*distancia margen derecho*/
+    cursor: pointer;       /*quito la flecha pongo la manito*/
+    display: none;      /*oculto el menu*/
+}
+#check{
+    display: none;      /*oculto el casillero check */
+}
+/*TITULO*/
+h1{     
+    font-size: 50px;
+    text-align: center;
+    color: rgb(233, 198, 40);
+    
+}
+/*ASIDE*/
+.pub1{
+    height: 200px;
+    width: 200px;
+    margin: 20px 0px;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    align-content: center;
+    background: slateblue;
+    border: 3px solid rgb(233, 198, 40);
+    transition: all 1s;
+}
+.pub1:hover{
+    height: 250px;
+    width: 400px;
+    background: darkslateblue;
+    border-color: aqua;
+    font-size: 20px;    
+}
+.pub2{
+    height: 200px;
+    width: 200px;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    align-content: center;
+    background: slateblue;
+    border: 3px solid rgb(233, 198, 40);
+    transition: all 1s;
+}
+.pub2:hover{
+    height: 250px;
+    width: 400px;
+    background: darkslateblue;
+    border-color: aqua;
+    font-size: 20px;   
+    padding: 10px;
+    margin-bottom: 50px; 
+}
+/*NOTA PRINCIPAL*/
+.article{
+    margin: auto;
+    margin-top: 50px;
+    border: 4px solid rgb(233, 198, 40);
+    background: lightgray;
+    width: 1200px;
+    text-align: justify;
+    padding: 10px;
+    margin: 15px 150px 50px 0px;
+    border-radius: 6px;
+    box-shadow: 10px 15px 15px 5px rgba(233, 198, 40, 0.355);
+}
+.article img{
+    float: right;
+    width: 350px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+h2{
+    font-size: xx-large;
+    text-align: justify;
+    margin: 10px;
+}
+h3{
+    font-size: x-large;
+    text-align: justify;
+    margin: 10px;
+}
+.letra{
+    margin: 10px;
+}
+.letra::first-letter{
+    font-size: 25px;
+    color: rgb(233, 198, 40);
+}
+/*FOOTER*/
+.footer{
+    background: rgb(233, 198, 40);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 280px;
+    margin-bottom: 30px;
+}
+.secciones{
+    height: 250px;
+    font-size: 18px;
+}
+.secciones ul li a:hover{
+    color: white;
+    border-radius: 6px;
+    background: blue;
+}
+.redes{
+    height: 250px;
+    font-size: 18px;
+}
+/*MEDIA QUERY*/
+@media (max-width: 1600px){  /*aplico view port para monitor mas chico*/
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: "header header"
+                             "titulo titulo"
+                             "article article"
+                             "aside aside"  
+                             "footer footer";
+    }
+    .enlace{                     /*link bajo en logo por si quiero usarlo para algo*/
+        font-size: 16px;        /* le doy un tamañp*/
+        padding-left: 22px;      /*le distancio del lado izq*/
+    }
+    .titulo{
+        grid-area: "titulo";
+        grid-column: 1/3;
+        grid-row: 2/3;
+        margin-top: 140px;
+    }
+    h1{
+        color: rgb(233, 198, 40);
+        text-align: center;
+        font-size: 48px;
+    }
+    .article{
+        grid-area: "article";
+        grid-column: 1/3;
+        grid-row: 3/4;
+        margin-top: 40px;
+        border: 4px solid rgb(233, 198, 40);
+        background: lightgray;
+        text-align: justify;
+        width: 90%;
+        justify-self: center;
+        height: 100%;
+        padding: 20px;
+        margin:20px;
+    }
+    .article img{
+        float: right;
+        width: 450px;
+        margin-left: 50px;
+        margin-bottom: 10px;
+    }
+    h2{
+        font-size: xx-large;
+        text-align: justify;
+    }
+    h3{
+        font-size: x-large;
+        text-align: justify;
+        margin: 10px;
+    }
+    .letra{
+        margin: 5px;
+    }
+    .letra::first-letter{
+        font-size: 25px;
+        color:rgb(233, 198, 40);
+    }
+    .aside{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        grid-area: "aside";
+        grid-column: 1/3;
+        grid-row: 4/5;
+        height: 450px;
+        width: 100%;
+    }
+    .pub1{
+        grid-area: "pub1";
+        grid-column: 1/2;
+        grid-row: 4/5;
+        height: 250px;
+        width: 400px;
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        margin-right: 20px;
+        align-content: center;
+        background: darkgrey;
+        border: 3px solid rgb(233, 198, 40);
+    }
+    .pub2{
+        grid-area:"pub2";
+        grid-column: 2/3;
+        grid-row: 4/5;
+        height: 250px;
+        width: 400px;
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        align-content: center;
+        background: slategray;
+        border: 3px solid rgb(233, 198, 40);
+    }
+    .footer{
+        grid-area: "footer";
+        grid-column: 1/3;
+        grid-row: 5/6;
+        width: 90%;
+        position: relative;
+        margin: auto ;
+    }    
+}
+@media (max-width: 1152px){    /*view port para tablet*/
+    .enlace{
+        padding-left: 20px;     /*muevo la caja del logo de 40 a 20 px izq*/
+    }
+    nav ul li a{               
+        font-size: 14px;        /*achico el tamaño de la fuente de la barra de menu.*/
+    }
+}
+@media (max-width: 850px){     /*view port telefono*/
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: "header"
+                             "titulo"
+                             "article"
+                             "aside"  
+                             "footer";
+    }
+    .checkbtn{                      
+        display: block;       /*le pido que se comporte como bloque*/ 
+    }
+    nav ul{
+        position: fixed;     /*fijo el menu*/
+        width: 100%;               /*ancho del tel*/
+        height: 100%;             /* alto del tel*/
+        background: rgb(71, 69, 69);      /*color del menu desplegable*/
+        top: 130px;                /* altura del menu*/
+        left: -100%;                /*lo oculto para que no se vea*/
+        text-align: center;           /* centro los items de menu*/
+        transition: all .5s;          /*le doy una transicion de medio seg*/
+    }
+    nav ul li{
+        display: block;      /*lista menu lo paso a bloque*/
+        margin: 50px 0;      /*margen de 50px*/
+        line-height: 30px;   /*separo los items con 30px*/
+    }
+    nav ul li a{
+        font-size: 20px;     /*tamaño de la letra*/
+    }
+    nav ul li a:hover{              /*seudo clase*/
+        background: none;   /*le saco el bkg*/
+        color:red;        /*pinto las letras de rojo cuando las cliqueo*/
+    }
+    #check:checked ~ul{    /*traigo el menu cuando el casillero check esta tildado*/
+        left: 0;          /*posiciono el menu*/
+    }
+    h1{ 
+        grid-column: 1/2;
+        grid-row: 2/3;
+        font-size: 45px;
+        text-align: center;
+        color: lightseagreen;
+    }
+    .article{
+        grid-area: "article";
+        grid-column: 1/2;
+        grid-row: 3/4;
+        margin-top: 40px;
+        border: 4px solid rgb(233, 198, 40);
+        background: lightgray;
+        width: 85%;
+        height: 100%;
+        padding: 15px;
+        margin:20px
+    }
+    .article img{
+        float: right;
+        width: 450px;
+        align-content: center;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+    h2{
+        font-size: xx-large;
+        text-align: center;
+    }
+    h3{
+        font-size: x-large;
+        margin: 10px;
+        text-align: justify;
+    }
+    .letra{
+        text-align: justify;
+    }
+    .letra::first-letter{
+        font-size: 25px;
+        color: rgb(233, 198, 40);
+    }
+    .aside{
+        display: flex;
+        flex-direction: column;
+        grid-area: "aside";
+        grid-column: 1/2;
+        grid-row: 4/5;
+        justify-self: center;
+        margin: 50px 20px;
+        width: 90%;
+    }
+    .pub2{
+        grid-area:"pub2";
+        grid-column: 1/2;
+        grid-row: 5/6;
+        height: 300px;
+        width: 90%;
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        align-content: center;
+        background: slategray;
+        border: 3px solid rgb(233, 198, 40);
+    }
+    .pub1{
+        grid-area: "pub1";
+        grid-column: 1/2;
+        grid-row: 3/4;
+        height: 300px;
+        width: 90%;
+        margin: 10px 0px;
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        align-content: center;
+        background: darkgrey;
+        border: 3px solid rgb(233, 198, 40);
+    }
+    .footer{
+        grid-area: "footer";
+        grid-column: 1/2;
+        grid-row: 5/6;
+        width: 90%;
+        margin-top: 50px;
+    }    
+}

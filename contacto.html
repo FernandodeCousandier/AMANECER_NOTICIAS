@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contacto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="icon" type=".ico" href="/img/correo-de-contacto.ico">
+    <title>CONTACTO</title>
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <a href="#" class="enlace">       <!--enlace para logo por si lo necesito linkeado-->
+                <img src="./img/LOGO-10_seg_azul.gif" alt="logo amanecer noticias" class="logo">    <!--logo foto falta el png original-->
+            </a>
+            <input type="checkbox" id="check">         <!--coloco un checkbox-->
+            <label for="check" class="checkbtn">           <!--label del check-->
+                <i class="fas fa-bars"></i>                <!--importo logo de hamburguesa-->
+            </label>
+            <ul>                                       <!--lista desordenanda de los menu-->
+                <li><a href="Inicio.html">Inicio</a></li>                <!--cada uno con su link-->
+                <li><a href="paginarota.html">Nosotros</a></li>
+                <li><a class="active" href="contacto.html">Contacto</a></li>
+                <li><a href="paginarota.html">Noticias</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <h1 class="item titulo">CONTACTO</h1>
+        <div class="item formulario">
+            <form action="#" id="all" method="get">   <!--direccion donde se vana a guardar los formularios-->
+                <fieldset>                      <!--recuadro -->
+                    <legend><b>Datos a Completar</b></legend>  <!--quew queres que diga el recuadro-->
+                        <label for="fname">Nombre</label>   <!--etiqueta nom-->
+                            <input class="cont" type="text" id="fname" name="Nombre" value="">  <!--formulario nom-->
+                        <label for="lname">Apellido</label>         <!--etiqueta ape-->
+                            <input class="cont" type="text" id="lname" name="Apellido" value="">    <!--formulario nom-->
+                        <label for="tel">Teléfono</label>  <!--etiqueta tel-->
+                            <input class="cont" type="text" id="tel" name="Teléfono" value="+54 9 "> <!--formulario tel-->
+                        <label for="mail" >Mail</label>         <!--etiqueta mail-->
+                           <input class="cont" type="email" id="mail" name="Mail" value="">     <!--formulario mail-->
+                        <label for="pass">Password</label>          <!--etiqueta pass-->
+                            <input class="cont" type="password" id="pass" name="Password" value="">     <!--formulario pass-->
+                        <label for="dato">Fecha de Nac</label>          <!--etiqueta date-->
+                            <input class="cont" type="date" id="dato" name="Fecha de Nac" value="">         <!--formulario date-->
+                </fieldset>
+            </form>
+        </div>
+        <div class="item diario">
+            <p>¿Desea suscribirse al Diario? </p>       <!--titulo-->
+            <input type="checkbox" id="Si" name="suscripcion" value="Si">       <!--checkbox si-->
+            <label for="suscripcion"> Si  |</label>             <!--etiqueta si-->
+            <input type="checkbox" id="No" name="nosuscripcion" value="No">         <!--checkbox no-->
+            <label for="nosuscripcion"> No</label>      <!--etiqueta no-->
+        </div>
+        <div class="item genero">
+            <p>GENERO</p>               <!--titulo-->
+                <input type="radio" id="Masculino" name="GENERO" value="Masculino">     <!--buton radio masc-->
+                <label for="Masculino"> Masculino  |</label>        <!--etiqueta masc-->
+                <input type="radio" id="Femenimo" name="GENERO" value="Femenimo">       <!--radio masc-->
+                <label for="Femenimo"> Femenimo  |</label>                              <!--radio fem-->
+                <input type="radio" id="No_Binario" name="GENERO" value="No_Binario">   <!--radio no bi-->
+                <label for="No_Binario"> No Binario</label>
+        </div>
+        <button class="item boton" type="submit" form="all">ENVIAR</button>        <!--boton enviar todo-->
+        <p class="warnings"></p>
+        <script src="contacto.js"></script>
+        <div class="item opinion">
+            <h3>Tu opinión nos importa</h3>         <!--titulo-->
+            <form action="#" id="coment" method="get">       <!--formulario textar-->
+                <textarea name="Comentarios" id="Comentarios" rows="10" cols="40"  wrap="hard" placeholder="Opiná aquí:"></textarea>        <!--contenedor tex-->
+            </form>
+            <button class="item boton" form="coment" type="submit" value="submit">ENVIAR</button>  <!--boton enviar-->
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="item mapa">
+            <h3>Nos encontramos aquí</h3>       <!--titulo-->
+            <iframe title="Donde estamos"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2782.2791161273854!2d-67.43195732301092!3d-45.785635630228555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbde4f860fb7d6d7b%3A0x1ac401f0b37e4303!2sSgto.%20Baltazar%20Gonzalez%201698-1600%2C%20Comodoro%20Rivadavia%2C%20Chubut!5e0!3m2!1ses!2sar!4v1713324988605!5m2!1ses!2sar" width="400" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>     <!--frame del mapa-->
+        </div>
+        <div class="item telefonos">
+            <p class="aviso"><b>Comnunicate con Nosotros:</b></p>   <!--titulo-->
+            <ul>
+                <li><img src="./img/mensaje-de-telefono.gif" alt="" width="30">  Tel: 0800 333 2485</li>
+                <li><img src="./img/whatsapp.gif" alt="" width="30">  Tel: 354 481542</li>
+            </ul>
+        </div>
+        <div class="item redes">
+            <h3>Seguinos en la Redes</h3>       <!--titulos-->
+            <ul>        <!--lista desordenada-->
+                <li><a href="https://www.facebook.com/?stype=lo&deoia=1&jlou=AfcJy6ESq8I6FVyzuocQMx0d7GbPylfKVRJ-aa0OkaR11bEzQQVxjV-ZOKZCrYRPhSCyP8SlmqbWiOSs1j3yteGK7SicX0PlCxXASUAfc4Li3A&smuh=9266&lh=Ac-sXhuXAQ9yN2uIZTg"><img src="./img/facebook.gif" alt="" width="40"><p>Facebook</p></a></li>  <!--item lista compl img-->
+                <li><a href="https://twitter.com/?lang=es"><img src="./img/twitter-circled.gif" alt="" width="40"><p>Twiter</p></a></li>        <!--item lista compl img-->
+                <li><a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2F&hl=es-es&aa_click=8891933284028179"><img src="./img/instagram.gif" alt="" width="40"><p>Instagram</p></a></li>   <!--item lista compl img-->
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
