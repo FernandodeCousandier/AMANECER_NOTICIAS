@@ -6,16 +6,15 @@ body {                                       /*body*/
     place-items: center;                        /*centro los items*/
     color: white;                             /*color de texto*/
     font-family: sans-serif;                    /*tipografia*/
-  } 
+} 
 .glitch {                                   /*clase glitch*/
-    font-size: 8rem;                            /*tamaño de la fuente*/
-    font-weight: 700;
-    margin: 30px;                       /*espesor de la fuente*/
+    font-size: 7rem;                            /*tamaño de la fuente*/
+    font-weight: 600;
+    margin: 20px;                       /*espesor de la fuente*/
     position: relative;                     /*posicion */
     text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),          /*sombra texto posicion y color*/      
     -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
     0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-  
     animation: glitch 2500ms infinite;                      /*tiempo de animacion*/
 }
 .glitch span {                                      /*clase spam*/
@@ -77,7 +76,14 @@ body {                                       /*body*/
 @media (max-width: 800px){
     .glitch{
         font-size: 3rem;                            /*tamaño de la fuente*/
-        font-weight: 400;
+        font-weight: 200;
+        margin: 30px;
+    }
+}
+@media (max-width: 500px){
+    .glitch{
+        font-size: 3rem;                            /*tamaño de la fuente*/
+        font-weight: 200;
         margin: 30px;
     }
 }

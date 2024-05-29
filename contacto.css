@@ -332,7 +332,7 @@ footer div ul li{
         grid-area: "formulario";
         grid-column: 1/2;
         grid-row: 2/3;
-        margin: 20px;
+        margin: 10px;
         align-content: center;
         text-align: center;
         overflow: auto;
@@ -358,7 +358,7 @@ footer div ul li{
         grid-area: "diario";
         grid-column: 1/2;
         grid-row: 3/4;
-        margin: 20px;
+        margin: 10px;
         height: 150px;
         font-size: 18px;
         align-content: center;
@@ -372,7 +372,7 @@ footer div ul li{
         grid-row: 4/5;
         border-radius: 6px;
         height: 150px;
-        margin: 20px;
+        margin: 10px;
         font-size: 18px;
         align-content: center;
         text-align: center;
@@ -392,7 +392,7 @@ footer div ul li{
         grid-area: "opinion";
         grid-column: 1/2;
         grid-row: 6/7;
-        margin: 20px;
+        margin: 10px;
         width: 93%;
         border-radius: 6px;
         align-content: center;
@@ -417,7 +417,7 @@ footer div ul li{
         grid-column: 1/2;
         grid-row: 1/2;
         gap: 20px;
-        margin: 20px;
+        margin: 5px;
         height: 420px;
         text-align: center;
         align-content: center;
@@ -428,7 +428,7 @@ footer div ul li{
         grid-area: "telefonos";
         grid-column: 1/2;
         grid-row: 2/3;
-        margin: 20px;
+        margin: 10px;
         height: 150px;
         font-size: 18px;
         text-align: center;
@@ -440,7 +440,186 @@ footer div ul li{
         grid-area: "redes";
         grid-column: 1/2;
         grid-row: 3/4;
-        margin: 20px;
+        margin: 10px;
+        height: 150px;
+        font-size: 18px;
+        text-align: center;
+        align-content: center;
+        border-radius: 6px;
+        box-shadow: 10px 15px 20px 10px;
+    }
+}
+@media (max-width: 450px){     /*view port telefono*/
+    .checkbtn{                      
+        display: block;       /*le pido que se comporte como bloque*/ 
+    }
+    nav ul{
+        position: fixed;     /*fijo el menu*/
+        width: 100%;               /*ancho del tel*/
+        height: 100%;             /* alto del tel*/
+        background: rgb(71, 69, 69);      /*color del menu desplegable*/
+        top: 130px;                /* altura del menu*/
+        left: -100%;                /*lo oculto para que no se vea*/
+        text-align: center;           /* centro los items de menu*/
+        transition: all .5s;          /*le doy una transicion de medio seg*/
+    }
+    nav ul li{
+        display: block;      /*lista menu lo paso a bloque*/
+        margin: 50px 0;      /*margen de 50px*/
+        line-height: 30px;   /*separo los items con 30px*/
+    }
+    nav ul li a{
+        font-size: 20px;     /*tamaño de la letra*/
+    }
+    nav ul li a:hover{              /*seudo clase*/
+        background: none;   /*le saco el bkg*/
+        color:red;        /*pinto las letras de rojo cuando las cliqueo*/
+    }
+    #check:checked ~ul{    /*traigo el menu cuando el casillero check esta tildado*/
+        left: 0;          /*posiciono el menu*/
+    }
+    main{
+        grid-area: "main";          /*defino areas*/
+        display: grid;                  /*defino tipo de display*/
+        width: 100%;                        /*ancho de vw*/
+        border-radius: 6px;             /*redondeo bordes*/
+        grid-template-columns: 1fr;         /*cantidad de columnas*/
+        grid-template-rows: auto auto auto auto auto auto;      /*cantidad de filas*/
+        gap: 5px;                          /*distancia entre ellas*/
+        grid-template-areas: "titulo"           /*cantidad de areas y posicion*/
+                             "formulario"
+                             "diario"     
+                             "genero"
+                             "boton"
+                             "opinion";
+    }
+    .titulo{                        
+        grid-area: "titulo";
+        grid-column: 1/2;
+        grid-row: 1/2;
+        height: 40px;
+        text-align: center;
+        text-decoration: underline;
+        margin-top: 140px;
+        font-size: 30px;
+    }
+    fieldset{
+        height: 100%;
+        margin: 7px;
+    }
+    .formulario{
+        grid-area: "formulario";
+        grid-column: 1/2;
+        grid-row: 2/3;
+        margin: 10px;
+        align-content: center;
+        text-align: center;
+        overflow: auto;
+        font-size: 18px;
+        border-radius: 6px;
+        box-shadow: 10px 15px 20px 10px;
+    }
+    .formulario {
+        justify-content: center;    /*centro forms*/
+        text-align: center;     /*alineo txt*/
+        align-items: center; /* Alineo el texto */
+        padding: 10px; /* separo los input y label */
+        margin-bottom: 3px; /*margen hacia abajo*/
+    }
+    .formulario label{
+         margin-bottom: 5px; /* mas separacion */
+    }
+    .formulario input {
+        width: 90%; /* le doy un ancho a los input */
+        margin-bottom: 10px; /* mas espacio entre los input */
+    }
+    .diario{
+        grid-area: "diario";
+        grid-column: 1/2;
+        grid-row: 3/4;
+        margin: 10px;
+        height: 150px;
+        font-size: 18px;
+        align-content: center;
+        text-align: center;
+        border-radius: 6px;
+        box-shadow: 10px 15px 20px 10px;
+    }
+    .genero{
+        grid-area: "genero";
+        grid-column: 1/2;
+        grid-row: 4/5;
+        border-radius: 6px;
+        height: 150px;
+        margin: 10px;
+        font-size: 18px;
+        align-content: center;
+        text-align: center;
+        box-shadow: 10px 15px 20px 10px;
+    }
+    .boton{
+        grid-area: "boton";
+        grid-column: 1/2;
+        grid-row: 5/6;
+        height: 40px;
+        justify-self: center;
+        align-content: center;
+        text-align: center;
+        box-shadow: 5px 10px 15px 5px;
+    }
+    .opinion{
+        grid-area: "opinion";
+        grid-column: 1/2;
+        grid-row: 6/7;
+        margin: 10px;
+        width: 93%;
+        border-radius: 6px;
+        align-content: center;
+        text-align: center;
+        box-shadow: 10px 15px 20px 10px;
+    }
+    footer{
+        grid-area: "footer";
+        display: grid;
+        border-radius: 6px;
+        margin-bottom: 50px;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 20px;
+        grid-template-areas: "mapa"
+                             "telefonos"
+                             "redes";
+    }
+    .mapa{
+        grid-area: "mapa";
+        grid-column: 1/2;
+        grid-row: 1/2;
+        gap: 20px;
+        margin: 5px;
+        height: 420px;
+        text-align: center;
+        align-content: center;
+        box-shadow: 10px 15px 20px 10px;
+        border-radius: 6px;
+    }
+    .telefonos{
+        grid-area: "telefonos";
+        grid-column: 1/2;
+        grid-row: 2/3;
+        margin: 10px;
+        height: 150px;
+        font-size: 18px;
+        text-align: center;
+        align-content: center;
+        box-shadow: 10px 15px 20px 10px;
+        border-radius: 6px;
+    }
+    .redes{
+        grid-area: "redes";
+        grid-column: 1/2;
+        grid-row: 3/4;
+        margin: 10px;
         height: 150px;
         font-size: 18px;
         text-align: center;

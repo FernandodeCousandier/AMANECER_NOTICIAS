@@ -276,13 +276,16 @@ li a.active, li a:hover{            /*clase active para q se muestre y seudo cla
         background: white;
     }
     .aside{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
         grid-column: 1/2;
         grid-row: 4/5;
         width: 100%;
     }
     .pub1{
-        height: 300px;
-        width: 400px;
+        height: 250px;
+        width: 200px;
         margin: 30px 20px;
         color: white;
         text-align: center;
@@ -291,10 +294,17 @@ li a.active, li a:hover{            /*clase active para q se muestre y seudo cla
         background: rgb(113, 111, 130);
         border: 3px solid black;
         transition: all 1s;
+    }
+    .pub1:hover{
+        height: 250px;
+        width: 200px;
+        background: darkslateblue;
+        border-color: aqua;
+        font-size: 18px;
     }
     .pub2{
-        height: 300px;
-        width: 400px;
+        height: 250px;
+        width: 200px;
         margin: 30px 20px;
         color: white;
         text-align: center;
@@ -304,9 +314,17 @@ li a.active, li a:hover{            /*clase active para q se muestre y seudo cla
         border: 3px solid black;
         transition: all 1s;
     }
+    .pub2:hover{
+        height: 250px;
+        width: 200px;
+        background: darkslateblue;
+        border-color: aqua;
+        font-size: 18px;   
+        padding: 10px;
+    }
     .pub3{
-        height: 300px;
-        width: 400px;
+        height: 250px;
+        width: 200px;
         margin: 30px 20px;
         color: white;
         text-align: center;
@@ -315,6 +333,14 @@ li a.active, li a:hover{            /*clase active para q se muestre y seudo cla
         background: rgb(113, 111, 130);
         border: 3px solid black;
         transition: all 1s;
+    }
+    .pub3:hover{
+        width: 200px;
+        height: 250px;
+        background: darkslateblue;
+        border-color: aqua;
+        font-size: 20px;
+        padding: 10px;
     }
     .footer{
         grid-column: 1/2;
@@ -358,7 +384,7 @@ li a.active, li a:hover{            /*clase active para q se muestre y seudo cla
         width: 100%;               /*ancho del tel*/
         height: 100%;             /* alto del tel*/
         background: rgb(71, 69, 69);      /*color del menu desplegable*/
-        top: 245px;                /* altura del menu*/
+        top: 240px;                /* altura del menu*/
         left: -100%;                /*lo oculto para que no se vea*/
         text-align: center;           /* centro los items de menu*/
         transition: all .5s;          /*le doy una transicion de medio seg*/
@@ -420,9 +446,23 @@ li a.active, li a:hover{            /*clase active para q se muestre y seudo cla
         background: white;
     }
     .aside{
+        display: flex;
+        flex-direction: column;
         grid-column: 1/2;
         width: 100%;
         grid-row: 4/5;
+    }
+    .pub1{
+        height: 300px;
+        width: 380px;
+    }
+    .pub2{
+        height: 300px;
+        width: 380px;
+    }
+    .pub3{
+        height: 300px;
+        width: 380px;
     }
     .footer{
         grid-column: 1/2;
@@ -430,15 +470,113 @@ li a.active, li a:hover{            /*clase active para q se muestre y seudo cla
     }
 }
 @media (max-width: 500px){
+    .titulo{
+        position: fixed;
+        top: 0px;
+        width: 100%;
+    }
+    .header{
+        position: fixed;
+        top: 110px;
+        width: 100%;
+    }
     .nota{
         border: 3px solid blue;
         border-radius: 8px;
         box-shadow: 5px 10px 10px 5px rgba(100, 148, 237, 0.55);
-        margin: 10px 10px;
+        margin: 5px 10px;
         justify-self: center;
-        height: 310px;
+        height: 320px;
         width: 95%;
         background: white;
+        font-size: 14px;
+    }
+    .aside{
+        grid-column: 1/2;
+        width: 100%;
+        grid-row: 4/5;
+    }
+    .pub1{
+        height: 300px;
+        width: 380px;
+        margin: 5px 20px;
+        color: white;
+        text-align: center;
+        font-size: 18px;
+        align-content: center;
+        background: rgb(113, 111, 130);
+        border: 3px solid black;
+        transition: all 1s;
+    }
+    .pub1:hover{
+        height: 300px;
+        width: 380px;
+        background: darkslateblue;
+        border-color: aqua;
+        font-size: 20px;    
+    }
+    .pub2{
+        height: 300px;
+        width: 380px;
+        margin: 5px 20px;
+        color: white;
+        text-align: center;
+        font-size: 18px;
+        align-content: center;
+        background: rgb(113, 111, 130);
+        border: 3px solid black;
+        transition: all 1s;
+    }
+    .pub2:hover{
+        height: 300px;
+        width: 380px;
+        background: darkslateblue;
+        border-color: aqua;
+        font-size: 20px;   
+        padding: 10px;
+    }
+    .pub3{
+        height: 300px;
+        width: 380px;
+        margin: 5px 20px;
+        color: white;
+        text-align: center;
+        font-size: 18px;
+        align-content: center;
+        background: rgb(113, 111, 130);
+        border: 3px solid black;
+        transition: all 1s;
+    }
+    .pub3:hover{
+        width: 380px;
+        height: 300px;
+        background: darkslateblue;
+        border-color: aqua;
+        font-size: 20px;
+        padding: 10px;
+    }
+    .footer{
+        grid-column: 1/2;
+        grid-row: 5/6;
+        width: 100%;
+        font-size: 14px;
+
+    }
+    .secciones{
+        height: 250px;
+        margin-top: 0px;
+        font-size: 14px;
+    
+    }
+    .redes{
+        height: 250px;
+        margin-top: 0px;
+        font-size: 14px;
+    }
+    .nosotros{
+        height: 250px;
+        margin-top: 0px;
+        font-size: 14px;
     }
     
 }
