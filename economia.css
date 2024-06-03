@@ -385,7 +385,7 @@ h3{
     }
     .article img{
         float: left;
-        width: 450px;
+        width: 100%;
         align-content: center;
         margin-right: 10px;
         margin-bottom: 10px;
@@ -431,6 +431,15 @@ h3{
         background: slategray;
         border: 3px solid royalblue; 
     }
+    .pub2:hover{
+        height: 300px;
+        width: 90%;
+        background: darkslateblue;
+        border-color: aqua;
+        font-size: 20px;   
+        padding: 10px;
+        margin-bottom: 50px; 
+    }
     .pub1{
         grid-area: "pub1";
         grid-column: 1/2;
@@ -444,6 +453,13 @@ h3{
         align-content: center;
         background: darkgrey;
         border: 3px solid royalblue;
+    }
+    .pub1:hover{
+        height: 300px;
+        width: 90%;
+        background: darkslateblue;
+        border-color: aqua;
+        font-size: 20px;    
     }
     .footer{
         grid-area: "footer";

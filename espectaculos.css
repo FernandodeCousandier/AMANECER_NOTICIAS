@@ -320,7 +320,7 @@ h3{
         padding-left: 20px;     /*muevo la caja del logo de 40 a 20 px izq*/
     }
     nav ul li a{               
-        font-size: 14px;        /*achico el tamaño de la fuente de la barra de menu.*/
+        font-size: 20px;        /*achico el tamaño de la fuente de la barra de menu.*/
     }
 }
 @media (max-width: 850px){     /*view port telefono*/
@@ -384,11 +384,141 @@ h3{
         margin:20px
     }
     .article img{
-        float: left;
-        width: 450px;
+        float: center;
+        width: 95%;
         align-content: center;
-        margin-right: 10px;
         margin-bottom: 10px;
+        object-fit: cover;
+    }
+    h2{
+        font-size: xx-large;
+        text-align: center;
+        text-align: justify;
+    }
+    h3{
+        font-size: x-large;
+        margin: 10px;
+        text-align: justify;
+    }
+    .letra{
+        text-align: justify;
+    }
+    .letra::first-letter{
+        font-size: 25px;
+        color: blue;
+    }
+    .aside{
+        display: flex;
+        flex-direction: column;
+        grid-area: "aside";
+        grid-column: 1/2;
+        grid-row: 4/5;
+        justify-self: center;
+        margin: 50px 20px;
+        width: 90%;
+    }
+    .pub2{
+        grid-area:"pub2";
+        grid-column: 1/2;
+        grid-row: 5/6;
+        height: 300px;
+        width: 90%;
+        color: white;
+        margin: 10px 0px;
+        text-align: center;
+        font-size: 14px;
+        align-content: center;
+        background: slategray;
+        border: 3px solid royalblue; 
+    }
+    .pub1{
+        grid-area: "pub1";
+        grid-column: 1/2;
+        grid-row: 3/4;
+        height: 300px;
+        width: 90%;
+        margin: 10px 0px;
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        align-content: center;
+        background: darkgrey;
+        border: 3px solid royalblue;
+    }
+    .footer{
+        grid-area: "footer";
+        grid-column: 1/2;
+        grid-row: 5/6;
+        width: 90%;
+        margin-top: 50px;
+    }    
+}
+@media (max-width: 500px){     /*view port telefono*/
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: "header"
+                             "titulo"
+                             "article"
+                             "aside"  
+                             "footer";
+    }
+    .checkbtn{                      
+        display: block;       /*le pido que se comporte como bloque*/ 
+    }
+    nav ul{
+        position: fixed;     /*fijo el menu*/
+        width: 100%;               /*ancho del tel*/
+        height: 100%;             /* alto del tel*/
+        background: rgb(71, 69, 69);      /*color del menu desplegable*/
+        top: 130px;                /* altura del menu*/
+        left: -100%;                /*lo oculto para que no se vea*/
+        text-align: center;           /* centro los items de menu*/
+        transition: all .5s;          /*le doy una transicion de medio seg*/
+    }
+    nav ul li{
+        display: block;      /*lista menu lo paso a bloque*/
+        margin: 50px 0;      /*margen de 50px*/
+        line-height: 30px;   /*separo los items con 30px*/
+    }
+    nav ul li a{
+        font-size: 20px;     /*tamaño de la letra*/
+    }
+    nav ul li a:hover{              /*seudo clase*/
+        background: none;   /*le saco el bkg*/
+        color:red;        /*pinto las letras de rojo cuando las cliqueo*/
+    }
+    #check:checked ~ul{    /*traigo el menu cuando el casillero check esta tildado*/
+        left: 0;          /*posiciono el menu*/
+    }
+    h1{ 
+        grid-column: 1/2;
+        grid-row: 2/3;
+        font-size: 45px;
+        text-align: center;
+        color: royalblue;
+    }
+    .article{
+        grid-area: "article";
+        grid-column: 1/2;
+        grid-row: 3/4;
+        margin-top: 40px;
+        text-align: justify;
+        border: 4px solid royalblue;
+        background: lightgray;
+        width: 85%;
+        height: 100%;
+        overflow: auto;
+        padding: 15px;
+        margin:20px
+    }
+    .article img{
+        float: center;
+        width: 95%;
+        align-content: center;
+        margin-bottom: 10px;
+        object-fit: cover;
     }
     h2{
         font-size: xx-large;

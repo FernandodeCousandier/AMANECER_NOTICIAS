@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
     <link rel="icon" type=".ico" href="/img/correo-de-contacto.ico">
+    <script src="contacto.js"></script>
     <title>CONTACTO</title>
 </head>
 <body>
@@ -23,31 +24,30 @@
             </label>
             <ul>                                       <!--lista desordenanda de los menu-->
                 <li><a href="Inicio.html">Inicio</a></li>                <!--cada uno con su link-->
-                <li><a href="paginarota.html">Nosotros</a></li>
+                <li><a href="paginarota.html" target="_blank">Nosotros</a></li>
                 <li><a class="active" href="contacto.html">Contacto</a></li>
-                <li><a href="paginarota.html">Noticias</a></li>
+                <li><a href="paginarota.html" target="_blank">Noticias</a></li>
             </ul>
         </nav>
     </header>
     <main class="main">
         <h1 class="item titulo">CONTACTO</h1>
-        <div class="item formulario">
-            <form action="#" id="all" method="get">   <!--direccion donde se vana a guardar los formularios-->
-                <fieldset>                      <!--recuadro -->
-                    <legend><b>Datos a Completar</b></legend>  <!--quew queres que diga el recuadro-->
-                        <label for="fname">Nombre</label>   <!--etiqueta nom-->
-                            <input class="cont" type="text" id="fname" name="Nombre" value="">  <!--formulario nom-->
-                                <span class="error" id="tituloerror"></span>
-                        <label for="lname">Apellido</label>         <!--etiqueta ape-->
-                            <input class="cont" type="text" id="lname" name="Apellido" value="">    <!--formulario nom-->
-                        <label for="tel">Teléfono</label>  <!--etiqueta tel-->
-                            <input class="cont" type="text" id="tel" name="Teléfono" value="+54 9 "> <!--formulario tel-->
-                        <label for="mail" >Mail</label>         <!--etiqueta mail-->
-                           <input class="cont" type="email" id="mail" name="Mail" value="">     <!--formulario mail-->
-                        <label for="pass">Password</label>          <!--etiqueta pass-->
-                            <input class="cont" type="password" id="pass" name="Password" value="">     <!--formulario pass-->
-                        <label for="dato">Fecha de Nac</label>          <!--etiqueta date-->
-                            <input class="cont" type="date" id="dato" name="Fecha de Nac" value="">         <!--formulario date-->
+        <div class="item formularios">
+            <form action="#" id="all">   <!--direccion donde se vana a guardar los formularios-->
+                <fieldset>    <!--recuadro -->
+                    <legend><b>Datos a Completar</b></legend>  <!--que queres que diga el recuadro-->
+                    <label for="fname">Nombre</label>   <!--etiqueta nom-->
+                        <input class="cont" type="text" id="fname" name="Nombre" value="">  <!--formulario nom-->
+                    <label for="lname">Apellido</label>         <!--etiqueta ape-->
+                        <input class="cont" type="text" id="lname" name="Apellido" value="">    <!--formulario ape-->
+                    <label for="tel">Teléfono</label>  <!--etiqueta tel-->
+                        <input class="cont" type="text" id="tel" name="Teléfono" value="+54 9 "> <!--formulario tel-->
+                    <label for="mail" >Mail</label>         <!--etiqueta mail-->
+                       <input class="cont" type="email" id="mail" name="Mail" value="">     <!--formulario mail-->
+                    <label for="pass">Password</label>          <!--etiqueta pass-->
+                        <input class="cont" type="password" id="pass" name="Password" value="">     <!--formulario pass-->
+                    <label for="dato">Fecha de Nac</label>          <!--etiqueta date-->
+                        <input class="cont" type="date" id="dato" name="Fecha de Nac" value="">         <!--formulario date-->
                 </fieldset>
             </form>
         </div>
@@ -67,9 +67,7 @@
                 <input type="radio" id="No_Binario" name="GENERO" value="No_Binario">   <!--radio no bi-->
                 <label for="No_Binario"> No Binario</label>
         </div>
-        <button class="item boton" type="submit" form="all">ENVIAR</button>        <!--boton enviar todo-->
-        <p class="warnings"></p>
-        <script src="contacto.js"></script>
+        <button class="item boton" type="submit" form="all">ENVIAR</button>     <!--boton enviar todo-->
         <div class="item opinion">
             <h3>Tu opinión nos importa</h3>         <!--titulo-->
             <form action="#" id="coment" method="get">       <!--formulario textar-->

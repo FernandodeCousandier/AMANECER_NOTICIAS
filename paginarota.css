@@ -2,7 +2,8 @@
 body {                                       /*body*/
     background: #222;                       /*color de fondo*/
     min-height: 100vh;                          /*alto */
-    display: grid;                              /*tipo de display*/
+    display: grid;
+    text-align: center;                              /*tipo de display*/
     place-items: center;                        /*centro los items*/
     color: white;                             /*color de texto*/
     font-family: sans-serif;                    /*tipografia*/
@@ -10,7 +11,7 @@ body {                                       /*body*/
 .glitch {                                   /*clase glitch*/
     font-size: 7rem;                            /*tamaño de la fuente*/
     font-weight: 600;
-    margin: 20px;                       /*espesor de la fuente*/
+    margin: 30px;                       /*espesor de la fuente*/
     position: relative;                     /*posicion */
     text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),          /*sombra texto posicion y color*/      
     -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
@@ -64,13 +65,15 @@ body {                                       /*body*/
         font-size: 6rem;                            /*tamaño de la fuente*/
         font-weight: 500;
         margin: 30px;
+        text-align: center;
     }
 }
 @media (max-width: 1000px){
     .glitch{
         font-size: 4rem;                            /*tamaño de la fuente*/
         font-weight: 300;
-        margin: 30px;       
+        margin: 30px;
+        text-align: center;       
     }
 }
 @media (max-width: 800px){
@@ -78,12 +81,13 @@ body {                                       /*body*/
         font-size: 3rem;                            /*tamaño de la fuente*/
         font-weight: 200;
         margin: 30px;
+        text-align: center;
     }
 }
 @media (max-width: 500px){
     .glitch{
-        font-size: 3rem;                            /*tamaño de la fuente*/
+        font-size: 2rem;                            /*tamaño de la fuente*/
         font-weight: 200;
-        margin: 30px;
+        text-align: center;
     }
 }

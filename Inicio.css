@@ -464,9 +464,18 @@ li a.active, li a:hover{            /*clase active para q se muestre y seudo cla
         height: 300px;
         width: 380px;
     }
+    .pub1:hover, .pub2:hover, .pub3:hover{
+        height: 300px;
+        width: 380px;
+    }
     .footer{
         grid-column: 1/2;
         grid-row: 5/6;
+    }
+}
+@media (max-width:600px){
+    .nota{
+        height: 330px ;
     }
 }
 @media (max-width: 500px){
@@ -478,15 +487,16 @@ li a.active, li a:hover{            /*clase active para q se muestre y seudo cla
     .header{
         position: fixed;
         top: 110px;
+        margin-bottom:250px;
         width: 100%;
     }
     .nota{
         border: 3px solid blue;
         border-radius: 8px;
         box-shadow: 5px 10px 10px 5px rgba(100, 148, 237, 0.55);
-        margin: 5px 10px;
+        margin: 10px 10px;
         justify-self: center;
-        height: 320px;
+        height: 340px;
         width: 95%;
         background: white;
         font-size: 14px;
